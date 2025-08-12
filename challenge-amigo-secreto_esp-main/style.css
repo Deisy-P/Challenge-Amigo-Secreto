@@ -1,0 +1,308 @@
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-tertiary: #C4C4C4;
+    --color-button: #fe652b;
+    --color-button-hover: #e55720;
+    --color-text: #444444;
+    --color-white: #FFFFFF;
+    --color-success: #28a745;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, var(--color-primary), #6A5ACD);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    padding: 2rem; /* Espaciado general */
+}
+
+/* Contenedor principal para el diseño de dos columnas */
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    background-color: var(--color-secondary);
+    border-radius: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Contenedor de la imagen de fondo */
+.background-image {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-image: url('assets/amigo-secreto.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Contenedor principal de la aplicación */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 50%; /* Ocupa la mitad del espacio */
+    height: 100%;
+}
+
+/* Banner */
+.header-banner {
+    background-color: var(--color-primary);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.main-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+    color: var(--color-white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.header-banner img {
+    display: none;
+}
+
+/* Sección de entrada */
+.input-section {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.section-title {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Contenedores de entrada y botón */
+.input-wrapper {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.input-name {
+    flex-grow: 1;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--color-primary);
+    border-right: none;
+    border-radius: 2rem 0 0 2rem;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-name:focus {
+    border-color: var(--color-button);
+    box-shadow: 0 0 0 2px rgba(254, 101, 43, 0.2);
+}
+
+.button-add {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 600;
+    border: 2px solid var(--color-primary);
+    border-left: none;
+    border-radius: 0 2rem 2rem 0;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-add:hover {
+    background-color: #3753e8;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Estilos de los botones principales */
+button {
+    padding: 1rem 2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.button-draw {
+    background-color: var(--color-button);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.button-draw img {
+    height: 1.5rem;
+    margin-right: 0.75rem;
+    filter: invert(1);
+}
+
+.button-clear {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    width: 100%;
+}
+
+.button-clear:hover {
+    background-color: #b0b0b0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Listas */
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    list-style-type: none;
+    width: 100%;
+}
+
+.name-item {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.result-list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+    width: 100%;
+    text-align: center;
+}
+
+.result-item {
+    color: var(--color-success);
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    font-weight: bold;
+    text-align: center;
+    background-color: #d4edda;
+    border-radius: 1rem;
+    padding: 1rem;
+    animation: fadeIn 1s forwards;
+}
+
+/* Estilos de la ventana emergente */
+#custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#custom-alert-overlay.hidden {
+    display: none;
+}
+
+.custom-alert-box {
+    background-color: var(--color-white);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+}
+
+#custom-alert-message {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+}
+
+.button-close-alert {
+    background-color: #dc3545;
+    color: var(--color-white);
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-close-alert:hover {
+    background-color: #c82333;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column; /* Apila los elementos en pantallas pequeñas */
+        height: auto;
+    }
+
+    .background-image {
+        height: 250px;
+        width: 100%;
+        border-radius: 2rem 2rem 0 0;
+    }
+
+    .main-content {
+        width: 100%;
+        border-radius: 0 0 2rem 2rem;
+    }
+}
